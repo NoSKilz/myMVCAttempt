@@ -13,16 +13,17 @@
  */
 class model 
 {
-    private $database;
+    private $database,$connection;
     public function __construct($database)
     {
         $this->database = $database;
+        $this->connection = $this->database::connect('localhost','project','root','');
     }
     public function getPlatforms()
     {
         $sql='SELECT platform_name FROM platform';
         $result=[];
-        foreach ($this->database->query($sql) as $row)
+        foreach ($this->connection->query($sql) as $row)
         {
             array_push($result,$row);
         }
@@ -32,7 +33,7 @@ class model
     {
         $sql='SELECT genre_name FROM genre';
         $result=[];
-        foreach ($this->database->query($sql) as $row)
+        foreach ($this->connection->query($sql) as $row)
         {
             array_push($result,$row);
         }

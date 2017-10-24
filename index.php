@@ -7,8 +7,7 @@ and open the template in the editor.
 <?php
     require_once 'database.php';
     require_once 'model/model.php';
-    $db1=new database();
-    $db=$db1::connect('localhost','project','root','');
+    $db=new database();
     $model=new model($db);
     if(isset($_GET['c'])&&isset($_GET['v']))
     {
@@ -29,9 +28,9 @@ and open the template in the editor.
     }
     else if($_SERVER['PHP_SELF']=='/mvc/index.php')
     {
-        require_once "controler/HomeControler.php";
-        $c='Home';
-        $v='Home';
+        require_once "controler/homeControler.php";
+        $c='home';
+        $v='home';
         $cname="{$c}Controler";
         $controler=new $cname($model);
         $controler->defaults();
