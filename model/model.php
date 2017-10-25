@@ -39,4 +39,24 @@ class model
         }
         return $result;
     }
+    public function getBestGames()
+    {
+        $sql='SELECT product_id,product_name,platform_name,price FROM product ORDER BY sold desc LIMIT 20 OFFSET 0';
+        $result=[];
+        foreach ($this->connection->query($sql) as $row)
+        {
+            array_push($result,$row);
+        }
+        return $result;
+    }
+    public function getNewestGames($offset=8)
+    {
+        $sql="SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT 8 OFFSET $offset";
+        $result=[];
+        foreach ($this->connection->query($sql) as $row)
+        {
+            array_push($result,$row);
+        }
+        return $result;
+    }
 }

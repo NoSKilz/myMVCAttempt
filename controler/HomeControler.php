@@ -13,15 +13,14 @@
  */
 class HomeControler 
 {
-    private $model,$platforms,$genres;
+    private $model,$platforms,$genres,$best_games,$newest_games;
     public function __construct($model)
     {
         $this->model = $model;
-    }
-    public function defaults()
-    {
         $this->platforms = $this->model->getPlatforms();
         $this->genres = $this->model->getGenres();
+        $this->best_games = $this->model->getBestGames();
+        $this->newest_games = $this->model->getNewestGames();
     }
     public function platforms() 
     {
@@ -30,5 +29,13 @@ class HomeControler
     public function genres() 
     {
         return $this->genres;
+    }
+    public function bestgames() 
+    {
+        return $this->best_games;
+    }
+    public function newestgames()
+    {
+        return $this->newest_games;
     }
 }

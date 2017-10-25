@@ -23,8 +23,8 @@
                 require_once "view/{$v}View.php";
             ?>
         </div>
-        <script src="custom/js/main.script.min.js"></script>
-        <script src="custom/js/suggestions.min.js"></script>
-        <script src="custom/js/load_more.min.js"></script>
+        <script src="custom/js/main.script.min.js" nonce="<?php echo $nonce;?>"></script>
+        <script src="custom/js/suggestions.min.js" nonce="<?php echo $nonce;?>"></script>
+        <script src="custom/js/load_more.min.js" nonce="<?php echo $nonce;?>"></script>
     </body>
 </html>
