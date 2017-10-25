@@ -7,7 +7,7 @@ $i=1;
     <?php foreach($best_games as $best): ?>
     <div class="product">
         <a href="?c=produc&v=show&id=<?php echo $best['product_id'] ?>">
-            <p class="p-name"><?php echo $i ?>. <?php echo $best['product_name'];  echo "({$best['platform_name']})"; ?></p>
+            <p class="p-name"><?php echo $i ?>. <?php echo $best['product_name'];echo "  ({$best['platform_name']})"; ?></p>
             <p class="p-price"><?php echo $best['price'] ?> Kč</p>
         </a>
     </div>

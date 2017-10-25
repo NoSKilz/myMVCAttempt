@@ -49,7 +49,7 @@ class model
         }
         return $result;
     }
-    public function getNewestGames($offset=8)
+    public function getNewestGames($offset=0)
     {
         $sql="SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT 8 OFFSET $offset";
         $result=[];

@@ -10,7 +10,7 @@ $newest_games = $controler->newestgames();
                 <div class="flip">
                     <div class="front">
                         <img src="images/<?php echo $new['picture'] ?>" alt="Obrázek pro hru <?php echo $new['product_name'] ?>">
-                        <p class="name"><?php echo $new['product_name']; echo "({$new['platform_name']})"; ?></p>
+                        <p class="name"><?php echo $new['product_name'];echo "  ({$new['platform_name']})"; ?></p>
                         <p class="price"><?php $new['price'] ?> Kč</p>
                     </div>
                     <div class="back"><?php echo substr($new['description'],0,200); ?></div>
