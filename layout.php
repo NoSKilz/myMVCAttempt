@@ -22,6 +22,9 @@
             <?php
                 require_once "view/{$v}View.php";
             ?>
+            <footer>
+                    <p>© 2016 <a href="#">Radek Šimíček</a>, All Rights Reserved.</p>
+            </footer>
         </div>
         <script src="custom/js/main.script.min.js" nonce="<?php echo $nonce;?>"></script>
         <script src="custom/js/suggestions.min.js" nonce="<?php echo $nonce;?>"></script>

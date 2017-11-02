@@ -13,7 +13,7 @@ $newest_games = $controler->newestgames();
                         <p class="name"><?php echo $new['product_name'];echo "  ({$new['platform_name']})"; ?></p>
                         <p class="price"><?php $new['price'] ?> Kč</p>
                     </div>
-                    <div class="back"><?php echo substr($new['description'],0,200); ?></div>
+                    <div class="back"><?php echo mb_strimwidth($new['description'],0,200); ?></div>
                 </div>
             </div>
         </a>

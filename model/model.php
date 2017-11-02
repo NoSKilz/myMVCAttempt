@@ -17,46 +17,22 @@ class model
     public function __construct($database)
     {
         $this->database = $database;
-        $this->connection = $this->database::connect('localhost','project','root','');
+        $this->connection = $this->database->connect('localhost','project','root','');
     }
     public function getPlatforms()
     {
-        $sql='SELECT platform_name FROM platform';
-        $result=[];
-        foreach ($this->connection->query($sql) as $row)
-        {
-            array_push($result,$row);
-        }
-        return $result;
+        return $this->database->execute_fetchall('SELECT platform_name FROM platform');
     }
     public function getGenres()
     {
-        $sql='SELECT genre_name FROM genre';
-        $result=[];
-        foreach ($this->connection->query($sql) as $row)
-        {
-            array_push($result,$row);
-        }
-        return $result;
+        return $this->database->execute_fetchall('SELECT genre_name FROM genre');
     }
     public function getBestGames()
     {
-        $sql='SELECT product_id,product_name,platform_name,price FROM product ORDER BY sold desc LIMIT 20 OFFSET 0';
-        $result=[];
-        foreach ($this->connection->query($sql) as $row)
-        {
-            array_push($result,$row);
-        }
-        return $result;
+        return $this->database->execute_fetchall('SELECT product_id,product_name,platform_name,price FROM product ORDER BY sold desc LIMIT 20 OFFSET 0');
     }
     public function getNewestGames($offset=0)
     {
-        $sql="SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT 8 OFFSET $offset";
-        $result=[];
-        foreach ($this->connection->query($sql) as $row)
-        {
-            array_push($result,$row);
-        }
-        return $result;
+        return $this->database->execute_fetchall("SELECT product_id,product_name,platform_name,price,picture,description FROM product ORDER BY uploaded desc LIMIT 8 OFFSET $offset");
     }
 }
